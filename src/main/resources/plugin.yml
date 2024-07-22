@@ -1,0 +1,4 @@
+name: HiddenBackend
+version: '${project.version}'
+main: me.melonoof.hiddenbackend.HiddenBackend
+api-version: '1.13'
