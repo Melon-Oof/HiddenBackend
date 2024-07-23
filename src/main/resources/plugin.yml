@@ -2,3 +2,16 @@ name: HiddenBackend
 version: '${project.version}'
 main: me.melonoof.hiddenbackend.HiddenBackend
 api-version: '1.13'
+authors: [MelonOof, Melon1058]
+description: A plugin that allows you to hide your backend server from the server list.
+prefix: 'HiddenBackend'
+commands:
+    hiddenbackend:
+        description: HiddenBackend command
+        usage: /hiddenbackend debug
+        permission: hiddenbackend.command
+        aliases:
+        - hb
+        tab-complete: hiddenbackend
+        permission-message: You do not have permission to use this command.
+        default: true
