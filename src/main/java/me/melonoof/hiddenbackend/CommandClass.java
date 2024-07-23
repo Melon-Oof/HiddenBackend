@@ -31,8 +31,6 @@ public class CommandClass implements CommandExecutor {
                 commandSender.sendMessage("Config reloaded");
                 return true;
             }
-
-
         }
 
         if (args.length == 0) {

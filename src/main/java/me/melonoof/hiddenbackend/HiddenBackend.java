@@ -35,5 +35,6 @@ public final class HiddenBackend extends JavaPlugin {
         logger.info("");
         logger.info("Version: " + getDescription().getVersion() + " Disabled");
         logger.info("Author: " + getDescription().getAuthors());
+        saveConfig();
     }
 }
