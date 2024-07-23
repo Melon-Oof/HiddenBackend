@@ -19,28 +19,28 @@ public class CommandClass implements CommandExecutor {
 
         if (args.length == 1) {
             if (args[0].equalsIgnoreCase("debug")) {
-                if (plugin.getConfig().getBoolean("debug")) {
+                plugin.getConfig().set("Debug", !plugin.getConfig().getBoolean("Debug"));
+                plugin.saveConfig();
+                plugin.reloadConfig();
+                commandSender.sendMessage("Debug set to " + plugin.getConfig().getBoolean("Debug"));
+                return true;
+            }
 
-                    plugin.getConfig().set("debug", false);
-                    plugin.saveConfig();
-                    plugin.reloadConfig();
-                    commandSender.sendMessage("Debug set to false");
-                    return true;
-
-                } else if (!plugin.getConfig().getBoolean("debug")) {
-                    plugin.getConfig().set("debug", true);
-                    plugin.saveConfig();
-                    plugin.reloadConfig();
-                    commandSender.sendMessage("Debug set to true");
-                    return true;
-                } else {
-                    plugin.logger.info("Invalid value for debug in config.ym");
-                    return false;
-                }
-
+            if (args[0].equalsIgnoreCase("reload")) {
+                plugin.reloadConfig();
+                commandSender.sendMessage("Config reloaded");
+                return true;
             }
 
 
+        }
+
+        if (args.length == 0) {
+            plugin.getConfig().set("Enabled", !plugin.getConfig().getBoolean("Enabled"));
+            plugin.saveConfig();
+            plugin.reloadConfig();
+            commandSender.sendMessage("Enabled set to " + plugin.getConfig().getBoolean("Enabled"));
+            return true;
         }
         return false;
     }

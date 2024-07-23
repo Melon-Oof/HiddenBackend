@@ -5,7 +5,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.util.StringUtil;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
 public class TabCompleter implements org.bukkit.command.TabCompleter {
@@ -18,7 +18,7 @@ public class TabCompleter implements org.bukkit.command.TabCompleter {
 
 
         if (args.length == 1) {
-            return StringUtil.copyPartialMatches(args[0], Collections.singletonList("debug"), new ArrayList<>());
+            return StringUtil.copyPartialMatches(args[0], Arrays.asList("debug", "reload"), new ArrayList<>());
         }
         return null;
     }

@@ -20,10 +20,12 @@ public class PingListener implements Listener {
 
     @EventHandler
     public void PingEvent(PaperServerListPingEvent e) {
-        if (plugin.getConfig().getBoolean("enabled")) {
+        if (plugin.getConfig().getBoolean("Enabled")) {
             e.setCancelled(true);
+            plugin.reloadConfig();
         } else {
             e.setCancelled(false);
+            plugin.reloadConfig();
         }
 
 
@@ -31,6 +33,7 @@ public class PingListener implements Listener {
         if (plugin.getConfig().getBoolean("debug")) {
                 plugin.logger.info("IP Address: " + e.getAddress());
                 plugin.logger.info("Client version: " + e.getClient().getProtocolVersion());
+                plugin.logger.info("Enabled value: " + plugin.getConfig().getBoolean("Enabled"));
         }
     }
 }
