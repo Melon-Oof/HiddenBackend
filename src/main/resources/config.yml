@@ -1,6 +1,2 @@
 enabled: true
-debug: none
-# debug: none
-# debug: low
-# debug: normal
-# debug: high
+debug: false
