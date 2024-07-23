@@ -1,7 +1,7 @@
 name: HiddenBackend
 version: '${project.version}'
 main: me.melonoof.hiddenbackend.HiddenBackend
-api-version: '1.18'
+api-version: '1.13'
 authors: [MelonOof, Melon1058]
 description: A plugin that allows you to hide your backend server from the server list.
 prefix: 'HiddenBackend'

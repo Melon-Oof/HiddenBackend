@@ -22,6 +22,8 @@ public class PingListener implements Listener {
     public void PingEvent(PaperServerListPingEvent e) {
         if (plugin.getConfig().getBoolean("enabled")) {
             e.setCancelled(true);
+        } else {
+            e.setCancelled(false);
         }
 
 

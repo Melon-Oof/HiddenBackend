@@ -18,20 +18,6 @@ public class CommandClass implements CommandExecutor {
 
 
         if (args.length == 1) {
-            if (args[0].equalsIgnoreCase("reload")) {
-                plugin.reloadConfig();
-                commandSender.sendMessage("Config reloaded");
-                return true;
-            }
-
-            if (args[0].equalsIgnoreCase("enable")) {
-                plugin.getConfig().set("Enabled", true);
-                plugin.saveConfig();
-                plugin.reloadConfig();
-                commandSender.sendMessage("Enabled");
-                return true;
-            }
-
             if (args[0].equalsIgnoreCase("debug")) {
                 if (plugin.getConfig().getBoolean("debug")) {
 
@@ -52,15 +38,6 @@ public class CommandClass implements CommandExecutor {
                     return false;
                 }
 
-            }
-
-
-            if (args[0].equalsIgnoreCase("disable")) {
-                plugin.getConfig().set("Enabled", false);
-                plugin.saveConfig();
-                plugin.reloadConfig();
-                commandSender.sendMessage("Disabled");
-                return true;
             }
 
 
