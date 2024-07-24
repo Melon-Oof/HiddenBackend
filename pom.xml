@@ -6,7 +6,7 @@
 
   <groupId>me.melonoof</groupId>
   <artifactId>HiddenBackend</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
   <packaging>jar</packaging>
 
   <name>HiddenBackend</name>
@@ -61,6 +61,12 @@
   </repositories>
 
   <dependencies>
+      <dependency>
+          <groupId>org.bstats</groupId>
+          <artifactId>bstats-bukkit</artifactId>
+          <version>3.0.2</version>
+          <scope>compile</scope>
+      </dependency>
       <dependency>
           <groupId>io.papermc.paper</groupId>
           <artifactId>paper-api</artifactId>
