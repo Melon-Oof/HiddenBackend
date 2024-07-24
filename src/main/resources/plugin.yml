@@ -8,7 +8,7 @@ prefix: 'HiddenBackend'
 commands:
     hiddenbackend:
         description: HiddenBackend command
-        usage: /hiddenbackend debug
+        usage: /hiddenbackend
         permission: hiddenbackend.command
         aliases:
         - hb
