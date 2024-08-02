@@ -13,6 +13,15 @@ public final class HiddenBackend extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+        try {
+            Class.forName("com.destroystokyo.paper.ParticleBuilder");
+        } catch (ClassNotFoundException e) {
+            logger.severe("============= PAPER NOT DETECTED =============");
+            logger.severe("HiddenBackend requires Paper to run");
+            logger.severe("Download PaperMC here: https://papermc.io/software/paper");
+            logger.severe("============= PAPER NOT DETECTED =============");
+            getPluginLoader().disablePlugin(this);
+        }
 
         int pluginId = 22758;
         Metrics metrics = new Metrics(this, pluginId);
@@ -26,15 +35,6 @@ public final class HiddenBackend extends JavaPlugin {
         logger.info("Author:" + getDescription().getAuthors());
 
 
-        try {
-            Class.forName("com.destroystokyo.paper.ParticleBuilder");
-        } catch (ClassNotFoundException e) {
-            logger.severe("============= PAPER NOT DETECTED =============");
-            logger.severe("HiddenBackend requires Paper to run");
-            logger.severe("Download PaperMC here: https://papermc.io/software/paper");
-            logger.severe("============= PAPER NOT DETECTED =============");
-            getPluginLoader().disablePlugin(this);
-        }
 
         getConfig().options().copyDefaults();
         saveDefaultConfig();
