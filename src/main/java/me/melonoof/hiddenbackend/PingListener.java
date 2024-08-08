@@ -19,9 +19,9 @@ public class PingListener implements Listener {
         boolean enabled = plugin.getConfig().getBoolean("Enabled");
         boolean debug = plugin.getConfig().getBoolean("Debug");
 
+
         if (enabled) {
             e.setCancelled(true);
-            plugin.reloadConfig();
         } else {
             e.setCancelled(false);
         }
