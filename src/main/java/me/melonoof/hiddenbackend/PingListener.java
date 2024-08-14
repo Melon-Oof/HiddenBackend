@@ -22,8 +22,6 @@ public class PingListener implements Listener {
 
         if (enabled) {
             e.setCancelled(true);
-        } else {
-            e.setCancelled(false);
         }
 
         if (debug) {
